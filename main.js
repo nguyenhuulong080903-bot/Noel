@@ -171,15 +171,18 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
     const btn = document.getElementById("music-toggle");
 
     btn.addEventListener("click", () => {
-        if (music.muted) {
-            music.muted = false;
+        if (music.paused) {
             music.play();
-            btn.textContent = "🔊";
+            btn.textContent = "🔕 Tắt nhạc";
         } else {
-            music.muted = true;
-            btn.textContent = "🔈";
+            music.pause();
+            btn.textContent = "🔔 Bật nhạc";
         }
     });
+    window.addEventListener("click", () => {
+        music.play().catch(()=>{});
+    }, { once: true });
+
 
 
 
