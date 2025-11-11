@@ -1,6 +1,6 @@
-/* ===================== THEME (Christmas Classic) ===================== */
+
 :root{
-    /* Christmas tones */
+
     --pine:#0c1f1a;      /* xanh thông rất đậm */
     --green:#1f6f4a;     /* xanh lá chủ đạo */
     --crimson:#b91c1c;   /* đỏ */
@@ -32,6 +32,7 @@ body{
             linear-gradient(180deg, #d94646 0%, #1b4d3b 45%, #0c1f1a 100%);
     overflow-x:hidden;
 }
+
 
 /* nhẹ nhàng thêm glow vàng ấm */
 body::before{
@@ -131,7 +132,7 @@ body::before{
 /* chip màu noel */
 .chip{
     position:absolute; top:16px; left:16px;
-    width:46px; height:46px; border-radius:14px;
+    width:42px; height:42px; border-radius:14px;
     display:grid; place-items:center; font-weight:800; color:#1b1b1b;
     border:1px solid #ffffff42; background:#ffd166;
     box-shadow:0 10px 24px #0005

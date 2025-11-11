@@ -152,24 +152,15 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
         setTimeout(() => g.remove(), 8000);
     }, 900);
 
-// Drop gifts from Santa sleigh
-    (function () {
-        const root = document.body;
-        function dropGift() {
-            const g = document.createElement('div');
-            g.className = 'gift';
-            // vị trí phát sinh gần xe
-            const y = window.innerHeight * 0.82; // gần bottom 18vh
-            g.style.left = (Math.random() * 40 + window.innerWidth * 0.6) + 'px';
-            g.style.top  = (y - Math.random()*40) + 'px';
-            root.appendChild(g);
-            setTimeout(() => g.remove(), 6000);
-        }
-        setInterval(dropGift, 1600);
-    })();
     const music = document.getElementById("bg-music");
     const btn = document.getElementById("music-toggle");
 
+// Bắt buộc phải click trang ít nhất 1 lần
+    window.addEventListener("click", () => {
+        music.play();
+    }, { once: true });
+
+// Toggle
     btn.addEventListener("click", () => {
         if (music.paused) {
             music.play();
@@ -179,9 +170,6 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
             btn.textContent = "🔔 Bật nhạc";
         }
     });
-    window.addEventListener("click", () => {
-        music.play().catch(()=>{});
-    }, { once: true });
 
 
 
