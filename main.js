@@ -167,20 +167,20 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
         }
         setInterval(dropGift, 1600);
     })();
-// ====== MUSIC CONTROL ======
     const music = document.getElementById("bg-music");
-    const toggleBtn = document.getElementById("music-toggle");
+    const btn = document.getElementById("music-toggle");
 
-    toggleBtn.addEventListener("click", () => {
-        music.muted = !music.muted;
-
-        if (!music.muted) {
-            music.play(); // đảm bảo phát khi unmute
-            toggleBtn.textContent = "🔊 Đang phát";
+    btn.addEventListener("click", () => {
+        if (music.muted) {
+            music.muted = false;
+            music.play();
+            btn.textContent = "🔊";
         } else {
-            toggleBtn.textContent = "🔈 Tắt tiếng";
+            music.muted = true;
+            btn.textContent = "🔈";
         }
     });
+
 
 
 
