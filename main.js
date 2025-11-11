@@ -168,23 +168,20 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
         setInterval(dropGift, 1600);
     })();
 // ====== MUSIC CONTROL ======
-    const music = document.getElementById('bg-music');
-    const musicBtn = document.getElementById('music-toggle');
+    const music = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("music-toggle");
 
-// Tự động play nhưng muted (được phép)
-    music.muted = true;
-    music.play().catch(()=>{});
-
-// Khi user click → unmute (Chrome cho phép)
-    musicBtn.addEventListener("click", () => {
+    toggleBtn.addEventListener("click", () => {
         music.muted = !music.muted;
+
         if (!music.muted) {
-            music.play();
-            musicBtn.textContent = "🔊";
+            music.play(); // đảm bảo phát khi unmute
+            toggleBtn.textContent = "🔊 Đang phát";
         } else {
-            musicBtn.textContent = "🔇";
+            toggleBtn.textContent = "🔈 Tắt tiếng";
         }
     });
+
 
 
 
