@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMCN — Christmas Edition</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<div class="bell"></div>
+<div class="border-lights"></div>
+
+
+<div class="elf"></div>
+<div class="gift-rain"></div>
+
+<div class="cane-rain"></div>
+
+<div class="xmas-tree"></div>
+
+<div class="snowman" aria-hidden="true">
+    <svg viewBox="0 0 120 160">
+        <circle cx="60" cy="40" r="28" fill="#fff"/>
+        <circle cx="60" cy="105" r="38" fill="#fff"/>
+        <circle cx="50" cy="32" r="6" fill="#000"/>
+        <circle cx="72" cy="32" r="6" fill="#000"/>
+        <polygon points="60,38 90,46 60,54" fill="#ff8c00"/>
+        <circle cx="60" cy="80" r="4" fill="#000"/>
+        <circle cx="60" cy="95" r="4" fill="#000"/>
+        <circle cx="60" cy="110" r="4" fill="#000"/>
+    </svg>
+</div>
+
+<!-- ✅ LED Garland -->
+<div class="garland" aria-hidden="true">
+    <!-- 24 bóng -->
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- ✅ Snow Layer 1: cong – xoay – bay chéo -->
+<div class="snow calm big" aria-hidden="true">
+    <!-- 40 bông tĩnh -->
+    <!-- Bạn không cần thêm, CSS sẽ animate -->
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+    <span class="flake"></span><span class="flake"></span><span class="flake"></span>
+</div>
+
+<!-- ✅ Snow Layer 2: tuyết rơi thẳng (được sinh bằng JS) -->
+<div class="snow-down big" aria-hidden="true"></div>
+
+
+<!-- ✅ Header -->
+<header class="header">
+    <div class="container">
+        <div class="brand">CMCN<span>•</span>Noel</div>
+        <nav class="nav">
+            <a href="#revolutions">Lịch sử</a>
+            <a href="#video">Video</a>
+            <a href="#about">Giới thiệu</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ✅ Hero -->
+<section class="hero">
+    <div class="container">
+        <h1 class="title reveal">Các Cuộc Cách Mạng Công Nghiệp</h1>
+        <p class="subtitle reveal delay-1">Không khí Giáng Sinh đang đến — cùng khám phá các kỷ nguyên công nghiệp!</p>
+        <div class="cta-row reveal delay-2">
+            <a class="btn btn-primary" href="#revolutions">Khám phá ngay</a>
+            <a class="btn btn-ghost" href="#video">Xem video</a>
+        </div>
+    </div>
+</section>
+
+<!-- ✅ Revolutions Section -->
+<section id="revolutions" class="section">
+    <div class="container">
+        <h2 class="section-title reveal">Các kỷ nguyên công nghiệp</h2>
+        <p class="section-desc reveal delay-1">
+            Tổng quan 4 làn sóng thay đổi lớn nhất trong lịch sử nhân loại.
+        </p>
+
+        <div class="grid reveal delay-2">
+
+            <article class="card">
+                <div class="chip chip-1">1.0</div>
+                <h3>CMCN Lần Thứ Nhất</h3>
+                <p>Máy hơi nước, dệt may, cơ khí hóa.</p>
+                <button class="btn btn-pill" data-modal="modal-1">Tìm hiểu thêm</button>
+            </article>
+
+            <article class="card">
+                <div class="chip chip-2">2.0</div>
+                <h3>CMCN Lần Thứ Hai</h3>
+                <p>Điện, dây chuyền sản xuất, thép.</p>
+                <button class="btn btn-pill blue" data-modal="modal-2">Tìm hiểu thêm</button>
+            </article>
+
+            <article class="card">
+                <div class="chip chip-3">3.0</div>
+                <h3>CMCN Lần Thứ Ba</h3>
+                <p>Kỹ thuật số, máy tính, internet.</p>
+                <button class="btn btn-pill green" data-modal="modal-3">Tìm hiểu thêm</button>
+            </article>
+
+            <article class="card">
+                <div class="chip chip-4">4.0</div>
+                <h3>CMCN Lần Thứ Tư</h3>
+                <p>AI, IoT, Big Data.</p>
+                <button class="btn btn-pill red" data-modal="modal-4">Tìm hiểu thêm</button>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ✅ Video -->
+<section id="video" class="section video-section">
+    <div class="container">
+        <h2 class="section-title reveal">🎬 Video</h2>
+        <p class="section-desc reveal delay-1">
+            Hành trình 1.0 → 4.0 gói gọn trong 60 giây.
+        </p>
+
+        <div class="player-shell reveal delay-2">
+            <div class="glow"></div>
+            <video controls class="player">
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- ✅ About -->
+<section id="about" class="section">
+    <div class="container narrow">
+        <h2 class="section-title reveal">Không khí Giáng Sinh</h2>
+        <p class="section-desc reveal delay-1">
+            Tuyết rơi, đèn LED, màu đỏ – xanh – vàng và không khí lễ hội ấm áp.
+        </p>
+    </div>
+</section>
+
+<!-- ✅ Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 • CMCN Christmas Edition 🎄</p>
+    </div>
+</footer>
+
+<!-- ✅ Modals -->
+<div id="modal-1" class="modal">
+    <div class="modal-dialog">
+        <button class="modal-close">✕</button>
+        <h3>CMCN 1.0</h3>
+        <div class="modal-content">
+            <div class="box">Máy hơi nước.</div>
+            <div class="box">Cơ giới hóa dệt may.</div>
+            <div class="box">Đường sắt.</div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-2" class="modal">
+    <div class="modal-dialog">
+        <button class="modal-close">✕</button>
+        <h3>CMCN 2.0</h3>
+        <div class="modal-content">
+            <div class="box">Điện năng.</div>
+            <div class="box">Dây chuyền sản xuất.</div>
+            <div class="box">Tiêu chuẩn hóa.</div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-3" class="modal">
+    <div class="modal-dialog">
+        <button class="modal-close">✕</button>
+        <h3>CMCN 3.0</h3>
+        <div class="modal-content">
+            <div class="box">Máy tính & bán dẫn.</div>
+            <div class="box">Internet.</div>
+            <div class="box">Toàn cầu hóa.</div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-4" class="modal">
+    <div class="modal-dialog">
+        <button class="modal-close">✕</button>
+        <h3>CMCN 4.0</h3>
+        <div class="modal-content">
+            <div class="box">AI.</div>
+            <div class="box">IoT.</div>
+            <div class="box">Robot.</div>
+        </div>
+    </div>
+</div>
+<!-- Santa & Reindeer (SVG, no external image) -->
+<div class="santa-layer" aria-hidden="true">
+    <svg class="santa-sled" viewBox="0 0 420 140" width="420" height="140">
+        <!-- Reindeer 1 -->
+        <g transform="translate(40,25)">
+            <circle cx="20" cy="18" r="8" fill="#8b5e3c"/>
+            <rect x="10" y="24" width="26" height="10" rx="5" fill="#a06b43"/>
+            <line x1="14" y1="10" x2="6" y2="2" stroke="#d2b48c" stroke-width="2"/>
+            <line x1="18" y1="10" x2="26" y2="2" stroke="#d2b48c" stroke-width="2"/>
+            <circle cx="27" cy="18" r="2" fill="#000"/>
+            <rect x="28" y="26" width="12" height="3" rx="1.5" fill="#d2b48c"/>
+        </g>
+        <!-- Reindeer 2 -->
+        <g transform="translate(100,30)">
+            <circle cx="20" cy="18" r="8" fill="#8b5e3c"/>
+            <rect x="10" y="24" width="26" height="10" rx="5" fill="#a06b43"/>
+            <line x1="14" y1="10" x2="6" y2="2" stroke="#d2b48c" stroke-width="2"/>
+            <line x1="18" y1="10" x2="26" y2="2" stroke="#d2b48c" stroke-width="2"/>
+            <circle cx="27" cy="18" r="2" fill="#000"/>
+            <rect x="28" y="26" width="12" height="3" rx="1.5" fill="#d2b48c"/>
+        </g>
+        <!-- Reins -->
+        <path d="M135 38 C165 50, 205 62, 260 70" fill="none" stroke="#ffd166" stroke-width="2"/>
+        <!-- Sleigh + Santa -->
+        <g transform="translate(250,60)">
+            <!-- runner -->
+            <path d="M0 40 C20 55, 60 55, 90 40" fill="none" stroke="#ffd166" stroke-width="4" />
+            <path d="M10 40 L90 40" stroke="#ffd166" stroke-width="3" />
+            <!-- body -->
+            <rect x="8" y="10" width="90" height="28" rx="10" fill="#b91c1c" stroke="#ffd166" stroke-width="3"/>
+            <!-- Santa -->
+            <circle cx="30" cy="8" r="8" fill="#ffd7b5"/>
+            <path d="M22 0 L38 0 L34 -8 Z" fill="#e11d48"/> <!-- hat -->
+            <circle cx="34" cy="-8" r="3" fill="#fff"/>    <!-- pom -->
+            <rect x="20" y="10" width="24" height="18" rx="8" fill="#e11d48"/>
+            <rect x="30" y="10" width="4" height="18" fill="#ffd166"/>
+        </g>
+    </svg>
+</div>
+<!-- Santa Sleigh (inline SVG, no external images) -->
+<div class="santa-sleigh" aria-hidden="true">
+    <img class="santa-img" src="img/Untitled.png" alt="Santa">
+</div>
+
+
+
+<!-- Christmas Music -->
+<!-- Nhạc Giáng Sinh -->
+<audio id="bg-music" src="sound/jingle-bells-271538.mp3" loop muted></audio>
+
+
+<!-- Nút bật/tắt nhạc -->
+
+
+<!-- Mute Button -->
+<button id="music-toggle" class="music-btn">🔔</button>
+
+<script src="main.js"></script>
+</body>
+</html>
