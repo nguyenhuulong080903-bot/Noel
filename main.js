@@ -164,10 +164,10 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
     btn.addEventListener("click", () => {
         if (music.paused) {
             music.play();
-            btn.textContent = "🔕 Tắt nhạc";
+            btn.textContent = "🔕";
         } else {
             music.pause();
-            btn.textContent = "🔔 Bật nhạc";
+            btn.textContent = "🔔";
         }
     });
 
@@ -177,3 +177,4 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
 
 
 })();
+
