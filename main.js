@@ -152,25 +152,49 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
         setTimeout(() => g.remove(), 8000);
     }, 900);
 
-    const music = document.getElementById("bg-music");
+const music = document.getElementById("bg-music");
     const btn = document.getElementById("music-toggle");
+    const videoPlayer = document.querySelector('.player'); // Lấy thẻ video
 
-// Bắt buộc phải click trang ít nhất 1 lần
+    // Bắt buộc phải click trang ít nhất 1 lần để trình duyệt cho phép play
     window.addEventListener("click", () => {
-        music.play();
+        music.play().catch(e => console.log('Music autoplay blocked:', e));
     }, { once: true });
 
-// Toggle
+    // Toggle (Người dùng tương tác trực tiếp)
     btn.addEventListener("click", () => {
         if (music.paused) {
             music.play();
             btn.textContent = "🔕";
+            music.dataset.pausedByVideo = 'false'; 
         } else {
             music.pause();
             btn.textContent = "🔔";
+            music.dataset.pausedByVideo = 'false'; 
         }
     });
+    if (videoPlayer && music) {
 
+        videoPlayer.addEventListener('play', () => {
+            if (!music.paused) {
+                music.pause();
+                music.dataset.pausedByVideo = 'true';
+            }
+        });
+        const resumeMusic = () => {
+            if (music.dataset.pausedByVideo === 'true' && btn.textContent === '🔕') {
+                if (music.paused) {
+                    music.play().catch(error => {
+                        console.log('Tự động phát lại nhạc nền thất bại:', error);
+                    });
+                }
+                music.dataset.pausedByVideo = 'false'; 
+            }
+        };
+
+        videoPlayer.addEventListener('pause', resumeMusic);
+        videoPlayer.addEventListener('ended', resumeMusic);
+    }
 
 
 
@@ -178,5 +202,5 @@ document.querySelector('.floating-action')?.addEventListener('click', () => {
 
 })();
 
-
+    
 
