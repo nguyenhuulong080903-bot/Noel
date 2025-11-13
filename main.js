@@ -196,6 +196,7 @@ const music = document.getElementById("bg-music");
         videoPlayer.addEventListener('ended', resumeMusic);
     }
 
+    
 
 
 
